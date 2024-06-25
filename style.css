@@ -7,17 +7,15 @@ body {
 
 header {
     background: #333;
-    color: #fff;
+    color: #FFF;
     padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header .logo img {
-    width: 150px;
-}
-
-header nav {
-    display: flex;
-    justify-content: center;
+    width: 100px;
 }
 
 header nav ul {
@@ -32,13 +30,13 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fff;
+    color: #FFF;
     text-decoration: none;
 }
 
 .hero {
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    color: #fff;
+    color: #FFF;
     padding: 100px 20px;
     text-align: center;
 }
@@ -48,15 +46,21 @@ section {
     text-align: center;
 }
 
+#about h2, #team h2, #contact h2 {
+    color: #4CAF50;
+}
+
 #team .team-member {
     display: inline-block;
     margin: 20px;
+    text-align: center;
 }
 
 #team .team-member img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    border: 3px solid #FFEB3B;
 }
 
 form {
@@ -68,6 +72,7 @@ form {
 form label {
     display: block;
     margin: 10px 0 5px;
+    color: #4CAF50;
 }
 
 form input,
@@ -75,22 +80,22 @@ form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
+    border: 1px solid #9E9E9E;
+    border-radius: 5px;
 }
 
 form button {
-    background: #333;
-    color: #fff;
+    background: #4CAF50;
+    color: #FFF;
     padding: 10px 20px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 footer {
     background: #333;
-    color: #fff;
+    color: #FFF;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
