@@ -1,18 +1,25 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background: #f4f4f4;
+    box-sizing: border-box;
+    color: #333;
 }
 
+/* Header */
 header {
     background: #333;
-    color: #FFF;
+    color: #fff;
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header .logo img {
@@ -32,7 +39,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #FFF;
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -41,140 +48,338 @@ header nav ul li a:hover {
     color: #4CAF50;
 }
 
-.hero {
-    background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    color: #FFF;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.hero .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-section {
+/* Welcome Section */
+#welcome {
+    background: linear-gradient(to right, #228B22, #2E8B57);
+    color: #fff;
     padding: 50px 20px;
     text-align: center;
 }
 
-#about h2, #team h2, #sponsors h2, #news h2, #contact h2 {
-    color: #4CAF50;
+#welcome h1 {
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-#team .team-members {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+#welcome p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
-#team .team-member {
-    background: #FFF;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#welcome .button {
+    background: #fff;
+    color: #228B22;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#welcome .button:hover {
+    background: #228B22;
+    color: #fff;
+}
+
+/* Highlights Section */
+#highlights {
+    padding: 50px 20px;
     text-align: center;
-    max-width: 300px;
+    background: #f3f4f7;
 }
 
-#team .team-member img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 3px solid #FFEB3B;
-    margin-bottom: 10px;
+#highlights h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #228B22;
 }
 
-#sponsors .sponsors-logos {
+.gallery {
     display: flex;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-#sponsors .sponsors-logos img {
-    width: 150px;
-    margin: 20px;
-    transition: transform 0.3s;
-}
-
-#sponsors .sponsors-logos img:hover {
-    transform: scale(1.1);
-}
-
-#news .news-articles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#news .news-articles article {
-    background: #FFF;
-    margin: 20px;
-    padding: 20px;
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    text-align: left;
+    transition: transform 0.3s ease;
 }
 
-#news .news-articles article h3 {
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/*About Section */
+#about {
+    padding: 50px 0;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #228B22;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Latest News Section */
+#latest-news {
+    padding: 50px 20px;
+    background: #fff;
+}
+
+#latest-news h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
     color: #333;
 }
 
-#news .news-articles article a {
-    color: #4CAF50;
-    text-decoration: none;
-    transition: color 0.3s;
+#latest-news article {
+    margin-bottom: 30px;
 }
 
-#news .news-articles article a:hover {
-    color: #FFEB3B;
+#latest-news h3 {
+    font-size: 1.5rem;
+    color: #228B22;
+}
+
+#latest-news p {
+    font-size: 1rem;
+    color: #555;
+}
+
+#latest-news a {
+    color: #228B22;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#latest-news a:hover {
+    color: #2E8B57;
+}
+/* News Section */
+#news {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#news h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #228b22; /* Dark Green */
+}
+
+.news-articles {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.news-articles article {
+    flex: 1 1 300px;
+    background-color: #f3f4f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.news-articles article h3 {
+    font-size: 1.5rem;
+    color: #228b22; /* Dark Green */
+    margin-bottom: 10px;
+}
+
+.news-articles article p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.news-articles article a {
+    color: #228b22; /* Dark Green */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.news-articles article a:hover {
+    color: #2e8b57; /* Darker Green */
+}
+/* Sponsors Section */
+#sponsors {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#sponsors h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #228b22; /* Dark Green */
+}
+
+.sponsors-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.sponsors-logos img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Team Section */
+#team {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#team h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #228b22; /* Dark Green */
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 1 1 300px;
+    background-color: #f3f4f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    color: #228b22; /* Dark Green */
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links li a {
+    color: #228b22; /* Dark Green */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: #2e8b57; /* Darker Green */
+}
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #228b22; /* Dark Green */
 }
 
 form {
     max-width: 600px;
     margin: 0 auto;
-    text-align: left;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
 }
 
 form label {
     display: block;
-    margin: 10px 0 5px;
-    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 form input,
 form textarea {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: vertical;
 }
 
 form button {
-    background: #4CAF50;
-    color: #FFF;
+    background-color: #228b22; /* Dark Green */
+    color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 form button:hover {
-    background: #45a049;
+    background-color: #1e7e1e; /* Darker Green */
 }
-
+/* Footer */
 footer {
     background: #333;
-    color: #FFF;
+    color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 footer p {
@@ -184,14 +389,14 @@ footer p {
 footer a {
     color: #4CAF50;
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: bold;
 }
 
 footer a:hover {
-    color: #FFEB3B;
+    text-decoration: underline;
 }
 
-/* Estilos Responsivos */
+/* Responsive Design */
 @media (max-width: 768px) {
     header nav ul {
         flex-direction: column;
@@ -202,12 +407,14 @@ footer a:hover {
         margin: 10px 0;
     }
 
-    .hero {
-        padding: 50px 20px;
+    .gallery {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .hero .hero-content {
-        padding: 15px;
+    .team-members {
+        flex-direction: column;
+        align-items: center;
     }
 
     #team .team-member {
