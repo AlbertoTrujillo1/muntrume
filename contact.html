@@ -6,6 +6,26 @@
     <title>Muntrume Motorsport - Contact</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo.png" type="image/png">
+    <!-- Estilo adicional para el mapa -->
+    <style>
+        #map {
+            height: 400px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%; /* Ajustar el ancho del mapa */
+            max-width: 800px; /* Establecer un ancho máximo para el mapa */
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,21 +47,53 @@
     <section id="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Send</button>
-            </form>
+            <p>For inquiries or more information, please visit us at our location:</p>
+
+            <!-- Mapa de ubicación centrado -->
+            <div id="map">
+                <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+                <script>
+                    (function () {
+                        var setting = {
+                            "query": "Carrer del Segre, Barcelona, España",
+                            "width": 800,
+                            "height": 600,
+                            "satellite": false,
+                            "zoom": 12,
+                            "placeId": "EjVDYXJyZXIgZGVsIFNlZ3JlLCBTYW50IEFuZHJldSwgMDgwMzAgQmFyY2Vsb25hLCBTcGFpbiIuKiwKFAoSCZFH6CbbvKQSEQIEAC8rN6xfEhQKEgnlMI5xFpikEhEKZkdPPfuwRA",
+                            "cid": "0x5fac372b2f000402",
+                            "coords": [41.43291720000001, 2.1930151],
+                            "cityUrl": "/spain/barcelona",
+                            "cityAnchorText": "Mapa de Barcelona, Cataluña, España",
+                            "lang": "es",
+                            "queryString": "Carrer del Segre, Barcelona, España",
+                            "centerCoord": [41.43291720000001, 2.1930151],
+                            "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3",
+                            "embed_id": "1126849"
+                        };
+                        var d = document;
+                        var s = d.createElement('script');
+                        s.src = 'https://1map.com/js/script-for-user.js?embed_id=1126849';
+                        s.async = true;
+                        s.onload = function (e) {
+                            window.OneMap.initMap(setting);
+                        };
+                        var to = d.getElementsByTagName('script')[0];
+                        to.parentNode.insertBefore(s, to);
+                    })();
+                </script>
+                <a href="https://1map.com/es/map-embed">1 Map</a>
+            </div>
+
+            <!-- Información de contacto -->
+            <div class="contact-info">
+                <p><strong>Visit Us:</strong><br>
+                    Carrer del Segre, Barcelona, España</p>
+                <p><strong>Email:</strong><br>
+                    <a href="mailto:info@muntrumemotorsport.com">info@muntrumemotorsport.com</a></p>
+                <p><strong>Phone:</strong><br>
+                    +1 234 567 890</p>
+            </div>
         </div>
     </section>
 
