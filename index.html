@@ -16,13 +16,15 @@
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#about">Nosotros</a></li>
                 <li><a href="#team">Equipo</a></li>
+                <li><a href="#sponsors">Patrocinadores</a></li>
+                <li><a href="#news">Noticias</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <div class="hero">
+    <section id="home" class="hero">
+        <div class="hero-content">
             <h1>Thrustmaster Muntrume Motorsport Nvidia Racing Team</h1>
             <p>Desde Sant Andreu, Barcelona, encendemos las pistas virtuales con nuestra pasión y destreza.</p>
         </div>
@@ -31,21 +33,51 @@
     <section id="about">
         <h2>Nosotros</h2>
         <p>
-            Hailing from Sant Andreu, Barcelona, this simracing team embodies a dynamic duo of skilled Catalan pilots who light up virtual tracks with their prowess and unwavering passion for competition...
+            Hailing from Sant Andreu, Barcelona, this simracing team embodies a dynamic duo of skilled Catalan pilots who light up virtual tracks with their prowess and unwavering passion for competition. Rooted in a competitive spirit that resonates with their Catalan heritage, these pilots seamlessly blend technical finesse with unwavering determination to achieve nothing short of excellence in every race. Beyond the confines of the track, their special camaraderie reflects a deeply ingrained pride in representing their homeland on the global stage of simracing.
+        </p>
+        <p>
+            From the winding streets of Sant Andreu to the most formidable virtual circuits, this team showcases their mettle through meticulously crafted strategies, lightning-fast reflexes, and unmatched competitive drive. The fusion of their love for motorsport and the rich Catalan culture manifests in every turn, creating a harmonious synergy that propels them towards triumphant victories.
         </p>
     </section>
 
     <section id="team">
         <h2>Equipo</h2>
-        <div class="team-member">
-            <img src="images/pilot1.jpg" alt="Pilot 1">
-            <h3>Pilot 1</h3>
-            <p>Descripción del piloto 1.</p>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="images/pilot1.jpg" alt="Pilot 1">
+                <h3>Pilot 1</h3>
+                <p>Descripción del piloto 1. Un piloto con una destreza excepcional y una pasión incansable por la competencia.</p>
+            </div>
+            <div class="team-member">
+                <img src="images/pilot2.jpg" alt="Pilot 2">
+                <h3>Pilot 2</h3>
+                <p>Descripción del piloto 2. Con reflejos rápidos y una estrategia impecable, es una fuerza a tener en cuenta en cada carrera.</p>
+            </div>
         </div>
-        <div class="team-member">
-            <img src="images/pilot2.jpg" alt="Pilot 2">
-            <h3>Pilot 2</h3>
-            <p>Descripción del piloto 2.</p>
+    </section>
+
+    <section id="sponsors">
+        <h2>Patrocinadores</h2>
+        <div class="sponsors-logos">
+            <img src="images/sponsor1.png" alt="Patrocinador 1">
+            <img src="images/sponsor2.png" alt="Patrocinador 2">
+            <img src="images/sponsor3.png" alt="Patrocinador 3">
+        </div>
+    </section>
+
+    <section id="news">
+        <h2>Noticias</h2>
+        <div class="news-articles">
+            <article>
+                <h3>Título de la Noticia 1</h3>
+                <p>Resumen de la noticia 1...</p>
+                <a href="#">Leer más</a>
+            </article>
+            <article>
+                <h3>Título de la Noticia 2</h3>
+                <p>Resumen de la noticia 2...</p>
+                <a href="#">Leer más</a>
+            </article>
         </div>
     </section>
 
@@ -53,17 +85,22 @@
         <h2>Contacto</h2>
         <form>
             <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
             <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
             <label for="message">Mensaje:</label>
-            <textarea id="message" name="message"></textarea>
+            <textarea id="message" name="message" required></textarea>
             <button type="submit">Enviar</button>
         </form>
     </section>
 
     <footer>
         <p>&copy; 2024 Muntrume Motorsport. Todos los derechos reservados.</p>
+        <p>Síguenos en:
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </p>
     </footer>
 </body>
 </html>
