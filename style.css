@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: #f4f4f4;
 }
 
 header {
@@ -16,6 +17,7 @@ header {
 
 header .logo img {
     width: 100px;
+    margin-left: 20px;
 }
 
 header nav ul {
@@ -32,6 +34,11 @@ header nav ul li {
 header nav ul li a {
     color: #FFF;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #4CAF50;
 }
 
 .hero {
@@ -41,19 +48,38 @@ header nav ul li a {
     text-align: center;
 }
 
+.hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
 section {
     padding: 50px 20px;
     text-align: center;
 }
 
-#about h2, #team h2, #contact h2 {
+#about h2, #team h2, #sponsors h2, #news h2, #contact h2 {
     color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+#team .team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #team .team-member {
-    display: inline-block;
+    background: #FFF;
     margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    max-width: 300px;
 }
 
 #team .team-member img {
@@ -61,6 +87,53 @@ section {
     height: 200px;
     border-radius: 50%;
     border: 3px solid #FFEB3B;
+    margin-bottom: 10px;
+}
+
+#sponsors .sponsors-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#sponsors .sponsors-logos img {
+    width: 150px;
+    margin: 20px;
+    transition: transform 0.3s;
+}
+
+#sponsors .sponsors-logos img:hover {
+    transform: scale(1.1);
+}
+
+#news .news-articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#news .news-articles article {
+    background: #FFF;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: left;
+}
+
+#news .news-articles article h3 {
+    color: #333;
+}
+
+#news .news-articles article a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#news .news-articles article a:hover {
+    color: #FFEB3B;
 }
 
 form {
@@ -76,26 +149,4 @@ form label {
 }
 
 form input,
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #9E9E9E;
-    border-radius: 5px;
-}
-
-form button {
-    background: #4CAF50;
-    color: #FFF;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-footer {
-    background: #333;
-    color: #FFF;
-    text-align: center;
-    padding: 10px 0;
-}
+form textarea
