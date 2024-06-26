@@ -12,63 +12,9 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-        }
-        .contact-info, .contact-form, .map, .subscribe, .hours, .faq {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .contact-info h3, .contact-form h3, .subscribe h3, .hours h3, .faq h3 {
-            margin-top: 0;
-        }
-        .contact-info p, .hours p {
-            margin: 5px 0;
-        }
-        .map iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-        button[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        .social-icons {
-            text-align: center;
-        }
-        .social-icons a {
-            display: inline-block;
-            margin: 0 10px;
-        }
-        .social-icons img {
-            width: 32px;
-            height: 32px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
     </style>
 </head>
@@ -124,6 +70,11 @@
                     <p><strong>Q: Where are you located?</strong></p>
                     <p>A: We are located in Barcelona, Spain. Please see the map above for our exact location.</p>
                 </div>
+                <div class="join-team">
+                    <h3>Join Our Team</h3>
+                    <p>If you are interested in joining our team, please fill out the form using the link below:</p>
+                    <a href="https://forms.gle/your-google-form-link" target="_blank">Join Our Team</a>
+                </div>
             </div>
         </section>
     </main>
@@ -137,5 +88,22 @@
             </p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const containers = document.querySelectorAll('.container, .contact-info, .map, .subscribe, .hours, .faq, .join-team');
+
+            function checkVisibility() {
+                containers.forEach(container => {
+                    const rect = container.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight) {
+                        container.classList.add('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();  // Check visibility on load
+        });
+    </script>
 </body>
 </html>

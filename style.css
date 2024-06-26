@@ -8,7 +8,25 @@ body {
     box-sizing: border-box;
     color: #333;
 }
-
+#testimonials {
+    background-color: #fff;
+}
+.testimonial {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.testimonial p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.testimonial h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #4CAF50;
+}
 /* Header */
 header {
     background: #333;
@@ -387,58 +405,95 @@ header nav ul li a:hover {
 .button:hover {
     background-color: #555;
 }
-
-.contact-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.contact-form h3 {
-    margin-top: 0;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    border-color: #4CAF50;
-    outline: none;
-}
-
-button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #45a049;
-}
+        /* Estilos básicos para la página de contacto */
+        .contact-info, .contact-form, .map, .subscribe, .hours, .faq, .join-team {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .contact-info h3, .contact-form h3, .subscribe h3, .hours h3, .faq h3, .join-team h3 {
+            margin-top: 0;
+        }
+        .contact-info p, .hours p {
+            margin: 5px 0;
+        }
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #4CAF50;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .social-icons {
+            text-align: center;
+        }
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+        }
+        .join-team a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .join-team a:hover {
+            background-color: #45a049;
+        }
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
 
 /* Footer */
 footer {
