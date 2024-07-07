@@ -32,6 +32,18 @@
         </div>
     </section>
 
+    <section id="carousel">
+        <div class="carousel">
+            <img src="race1.jpg" alt="Race 1">
+            <img src="race2.jpg" alt="Race 2">
+            <img src="race3.jpg" alt="Race 3">
+        </div>
+        <div class="carousel-buttons">
+            <button class="carousel-button" onclick="prevSlide()">Previous</button>
+            <button class="carousel-button" onclick="nextSlide()">Next</button>
+        </div>
+    </section>
+
     <section id="highlights">
         <div class="container">
             <h2>Highlights</h2>
@@ -65,17 +77,26 @@
         </div>
     </section>
 
-    <section id="testimonials">
+    <section id="sponsors">
         <div class="container">
-            <h2>Testimonials</h2>
-            <div class="testimonial">
-                <p>"Muntrume Motorsport is a fantastic team. Their dedication and passion for racing are truly inspiring."</p>
-                <h3>- John Doe</h3>
+            <h2>Our Sponsors</h2>
+            <p>We are grateful for the support of our amazing sponsors.</p>
+            <div class="gallery">
+                <img src="sponsor1.png" alt="Sponsor 1">
+                <img src="sponsor2.png" alt="Sponsor 2">
+                <img src="sponsor3.png" alt="Sponsor 3">
             </div>
-            <div class="testimonial">
-                <p>"Joining Muntrume Motorsport was the best decision I made. The team spirit and professionalism are unmatched."</p>
-                <h3>- Jane Smith</h3>
-            </div>
+        </div>
+    </section>
+
+    <section id="newsletter">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest news and events from Muntrume Motorsport.</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="button">Subscribe</button>
+            </form>
         </div>
     </section>
 
@@ -89,6 +110,29 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel img');
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${(i - index) * 100}%)`;
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        showSlide(currentSlide);
+    </script>
 
 <script src="script.js"></script> <!-- Include your JavaScript file -->
 
