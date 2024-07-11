@@ -6,6 +6,33 @@
     <title>Muntrume Motorsport - Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo.png" type="image/png">
+    <style>
+#carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+.carousel img {
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+.carousel-button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -34,26 +61,17 @@
 
     <section id="carousel">
         <div class="carousel">
-            <img src="Copia de Muntrume-269 (1).png" alt="Race 1">
-            <img src="race2.jpg" alt="Race 2">
-            <img src="race3.jpg" alt="Race 3">
+            <img src="coche1.png" alt="Header Image 1" class="active">
+            <img src="coche2.png" alt="Header Image 2" loading="lazy">
+            <img src="coche3.png" alt="Header Image 3" loading="lazy">
+            <img src="coche4.png" alt="Header Image 4" loading="lazy">
         </div>
         <div class="carousel-buttons">
-            <button class="carousel-button" onclick="prevSlide()">Previous</button>
-            <button class="carousel-button" onclick="nextSlide()">Next</button>
+            <button class="carousel-button" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-button" onclick="nextSlide()">&#10095;</button>
         </div>
     </section>
-
-    <section id="highlights">
-        <div class="container">
-            <h2>Highlights</h2>
-            <div class="gallery">
-                <img src="coche1.png" alt="Featured Race 1">
-                <img src="coche2.png" alt="Featured Race 2">
-                <img src="coche3.png" alt="Featured Race 3">
-            </div>
-        </div>
-    </section>
+    
 
     <section id="latest-news">
         <div class="container">
@@ -89,26 +107,41 @@
     </footer>
 
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel img');
-        
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.transform = `translateX(${(i - index) * 100}%)`;
-            });
-        }
-        
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-        
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-        
+    let currentSlide = 0;
+    let autoSlideInterval;
+
+    const slides = document.querySelectorAll('.carousel img');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.transform = `translateX(${(i - index) * 100}%)`;
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    document.querySelector('.carousel').addEventListener('mouseover', stopAutoSlide);
+    document.querySelector('.carousel').addEventListener('mouseout', startAutoSlide);
+
+    showSlide(currentSlide);
+    startAutoSlide();
+
     </script>
 
 <script src="script.js"></script> <!-- Include your JavaScript file -->
