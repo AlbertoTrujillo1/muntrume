@@ -49,14 +49,15 @@
                     <h3>Our Location</h3>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.5151895368845!2d2.158990515439659!3d41.39020547926353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f72dbd4bfb%3A0xc0d69c5e5ec2e7d9!2sBarcelona%2C%20Spain!5e0!3m2!1sen!2sus!4v1623675645648!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div class="subscribe">
-                    <h3>Subscribe to our Newsletter</h3>
-                    <form action="subscribe.php" method="post">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        <button type="submit">Subscribe</button>
+                    <section id="contact" class="contact-section">
+                    <h2>Contact</h2>
+                    <form action="enviar.php" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your message" required></textarea>
+                        <button type="submit" class="btn-primary">Submite</button>
                     </form>
-                </div>
+                </section>
                 <div class="hours">
                     <h3>Business Hours</h3>
                     <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
