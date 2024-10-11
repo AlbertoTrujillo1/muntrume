@@ -373,7 +373,9 @@ header nav ul li a:hover {
 }
 #contact h2 {
     text-align: center;
-    margin-top: 20px;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #228B22;
 }
 
 #contact p {

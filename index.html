@@ -5,167 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muntrume Motorsport - Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="icon" href="logo.png" type="image/png">
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            background-color: #333;
-            color: white;
-        }
-
-        .logo img {
-            max-width: 150px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin: 0 10px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-        }
-
-        #welcome {
-            padding: 50px 0;
-            background-color: #f4f4f4;
-        }
-
-        #welcome h1 {
-            margin-bottom: 20px;
-        }
-
-        #welcome .button {
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        #carousel {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-        }
-
-        .carousel img {
-            width: 100%;
-            display: none;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel img.active {
-            display: block;
-        }
-
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .carousel-button {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        #latest-news {
-            padding: 50px 0;
-        }
-
-        #latest-news .news-articles {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        #latest-news article {
-            flex: 1;
-            max-width: 30%;
-            min-width: 250px;
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        #latest-news article h3 {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            padding: 20px 0;
-            background-color: #333;
-            color: white;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-
-            header {
-                flex-direction: column;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 5px 0;
-            }
-
-            #latest-news .news-articles {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Muntrume Motorsport Logo">
+            <img src="logo.png" alt="Muntrume Motorsport Logo" style="height: 100px;">
         </div>
         <nav>
             <ul>
@@ -188,6 +34,7 @@
     </section>
 
     <section id="carousel">
+        <link rel="stylesheet" href="carousel.css">
         <div class="carousel">
             <img src="coche1.png" alt="Header Image 1" class="active">
             <img src="coche2.png" alt="Header Image 2" loading="lazy">
@@ -198,8 +45,7 @@
             <button class="carousel-button" onclick="prevSlide()">&#10094;</button>
             <button class="carousel-button" onclick="nextSlide()">&#10095;</button>
         </div>
-    </section>
-    
+    </section>    
     <section id="latest-news">
         <div class="container">
             <h2>Latest News</h2>
@@ -232,44 +78,7 @@
             </p>
         </div>
     </footer>
-
-    <script>
-    let currentSlide = 0;
-    let autoSlideInterval;
-
-    const slides = document.querySelectorAll('.carousel img');
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 5000);
-    }
-
-    function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
-    }
-
-    document.querySelector('.carousel').addEventListener('mouseover', stopAutoSlide);
-    document.querySelector('.carousel').addEventListener('mouseout', startAutoSlide);
-
-    showSlide(currentSlide);
-    startAutoSlide();
-
-    </script>
-    <script src="script.js"></script> <!-- Include your JavaScript file -->
+    <script src="index.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

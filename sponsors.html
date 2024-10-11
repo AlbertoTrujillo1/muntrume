@@ -5,110 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muntrume Motorsport - Sponsors</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sponsors.css">
     <link rel="icon" href="logo.png" type="image/png">
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Global Styles */
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-        }
-
-        .logo img {
-            max-width: 150px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin: 0 10px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        #sponsors {
-            padding: 50px 0;
-        }
-
-        #sponsors h2 {
-            margin-bottom: 20px;
-        }
-
-        .sponsors-logos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .sponsors-logos img {
-            max-width: 150px;
-            max-height: 100px;
-            transition: transform 0.3s;
-        }
-
-        .sponsors-logos img:hover {
-            transform: scale(1.1);
-        }
-
-        footer {
-            padding: 20px 0;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-
-            header {
-                flex-direction: column;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 5px 0;
-            }
-
-            .sponsors-logos {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Muntrume Motorsport Logo">
+            <img src="logo.png" alt="Muntrume Motorsport Logo" style="height: 100px;">
         </div>
         <nav>
             <ul>
@@ -121,21 +24,33 @@
             </ul>
         </nav>
     </header>
-
     <section id="sponsors">
         <div class="container">
             <h2>Our Sponsors</h2>
             <div class="sponsors-logos">
-                <img src="logo1.png" alt="Sponsor 1">
-                <img src="logo2.png" alt="Sponsor 2">
-                <img src="logo3.png" alt="Sponsor 3">
-                <img src="logo4.png" alt="Sponsor 4">
-                <img src="logo5.png" alt="Sponsor 5">
-                <img src="logo6.png" alt="Sponsor 6">
+                <a href="https://bhipglobal.com/?lang=es" target="_blank">
+                    <img src="logo1.png" alt="Sponsor 1">
+                </a>
+                <a href="https://www.nvidia.com" target="_blank">
+                    <img src="logo2.png" alt="Sponsor 2">
+                </a>
+                <a href="https://www.vodafone.com/" target="_blank">
+                    <img src="logo3.png" alt="Sponsor 3">
+                </a>
+                <a href="https://www.thrustmaster.com" target="_blank">
+                    <img src="logo4.png" alt="Sponsor 4">
+                </a>
+                <a href="https://www.corsair.com" target="_blank">
+                    <img src="logo5.png" alt="Sponsor 5">
+                </a>
+                <a href="https://www.monsterenergy.com" target="_blank">
+                    <img src="logo6.png" alt="Sponsor 6">
+                </a>
             </div>
             <div id="countdown" class="countdown"></div>
         </div>
     </section>
+    
 
     <footer>
         <div class="container">
