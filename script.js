@@ -1,5 +1,5 @@
 // Set the date and time for the countdown (20th July 2024, 15:00 UTC)
-const countdownDate = new Date('2024-07-20T13:00:00Z').getTime();
+const countdownDate = new Date('2024-10-19T16:00:00Z').getTime();
 
 // Update the countdown every second
 const countdownElement = document.getElementById('countdown');

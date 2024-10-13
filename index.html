@@ -6,12 +6,19 @@
     <title>Muntrume Motorsport - Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="icon" href="logo.webp" type="image/webp">
+    
+    <!-- Precarrega de recursos importants -->
+    <link rel="preload" href="logo.webp" as="image">
+    <link rel="preload" href="style.css" as="style">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Muntrume Motorsport Logo" style="height: 100px;">
+            <picture>
+                <source srcset="logo.webp" type="image/webp">
+                <img src="logo.webp" alt="Muntrume Motorsport Logo" width="150" height="150">
+            </picture>
         </div>
         <nav>
             <ul>
@@ -36,16 +43,29 @@
     <section id="carousel">
         <link rel="stylesheet" href="carousel.css">
         <div class="carousel">
-            <img src="coche1.png" alt="Header Image 1" class="active">
-            <img src="coche2.png" alt="Header Image 2" loading="lazy">
-            <img src="coche3.png" alt="Header Image 3" loading="lazy">
-            <img src="coche4.png" alt="Header Image 4" loading="lazy">
+            <picture>
+                <source srcset="coche1.webp" type="image/webp">
+                <img src="coche1.webp" alt="Header Image 1" class="active" width="auto" height="auto">
+            </picture>
+            <picture>
+                <source srcset="coche2.webp" type="image/webp">
+                <img src="coche2.png" alt="Header Image 2" loading="lazy" width="auto" height="auto">
+            </picture>
+            <picture>
+                <source srcset="coche3.webp" type="image/webp">
+                <img src="coche3.png" alt="Header Image 3" loading="lazy" width="auto" height="auto">
+            </picture>
+            <picture>
+                <source srcset="coche4.webp" type="image/webp">
+                <img src="coche4.png" alt="Header Image 4" loading="lazy" width="auto" height="auto">
+            </picture>
         </div>
         <div class="carousel-buttons">
             <button class="carousel-button" onclick="prevSlide()">&#10094;</button>
             <button class="carousel-button" onclick="nextSlide()">&#10095;</button>
         </div>
-    </section>    
+    </section>
+
     <section id="latest-news">
         <div class="container">
             <h2>Latest News</h2>
@@ -61,7 +81,7 @@
                     <a href="sponsors.html">Read More</a>
                 </article>
                 <article>
-                    <h3>Countdown to 24 Hours of Spa</h3>
+                    <h3>Countdown to Petit Le Mans</h3>
                     <div id="countdown"></div>
                 </article>
             </div>
@@ -78,7 +98,9 @@
             </p>
         </div>
     </footer>
-    <script src="index.js"></script>
-    <script src="script.js"></script>
+    
+    <!-- Optimització del JavaScript -->
+    <script src="index.js" async></script>
+    <script src="script.js" async></script>
 </body>
 </html>
