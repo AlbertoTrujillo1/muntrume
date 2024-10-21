@@ -94,6 +94,25 @@ footer p {
     margin: 5px 0;
 }
 
+#race-countdown {
+    font-size: 24px;
+    color: #ff6f61;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#calendar-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#calendar-list li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #000000;
+}
+
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .container {

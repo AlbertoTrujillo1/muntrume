@@ -90,6 +90,38 @@
             </div>
         </div>
     </section>
+
+    <section id="pitstop-simulator">
+        <h2>Virtual Pitstop Challenge</h2>
+    
+        <div id="user-input">
+            <label for="username">Enter your name:</label>
+            <input type="text" id="username" placeholder="Your name">
+            <button id="start-game" class="button-pitstop">Start Challenge</button>
+        </div>
+    
+        <div id="pitstop-controls" style="display: none;">
+            <p id="pitstop-status">Ready to take the challenge? Click start!</p>
+            <div id="pitstop-timer">Time: 0.00s</div>
+        </div>
+    
+        <section id="ranking" style="display: none;">
+            <h3>Leaderboard</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Time (s)</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    <!-- Se actualizará con el ranking de los jugadores -->
+                </tbody>
+            </table>
+        </section>
+    </section>
+    
     
     <footer>
         <div class="container">
@@ -99,7 +131,13 @@
                 <a href="#">Twitter</a> |
                 <a href="#">Instagram</a>
             </p>
+            <div class="discord-cta">
+                <a href="https://discord.gg/ehX6B8JUtE" target="_blank" class="discord-button">
+                    Join us on Discord
+                </a>
+            </div>
         </div>
     </footer>
+    <script src="pitstop.js" async></script>
 </body>
 </html>
