@@ -456,12 +456,12 @@ header nav ul li a:hover {
 }
 
 .button:hover {
-    background-color: #555;
+    background-color: #ffffff;
 }
 /* Estilos del simulador */
 #pitstop-simulator {
-    background-color: #1a1a1a;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(12, 95, 1);
     padding: 40px 20px;
     text-align: center;
     border-radius: 10px;
@@ -473,7 +473,7 @@ header nav ul li a:hover {
 #pitstop-simulator h2, #pitstop-simulator h3 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: #FF6F61;
+    color: #147500;
 }
 
 #user-input {
@@ -484,7 +484,7 @@ header nav ul li a:hover {
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #333;
+    border: 1px solid #ff0000;
     margin-right: 10px;
 }
 
@@ -499,18 +499,18 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #333;
+    border: 1px solid #0c6b00;
     padding: 10px;
     text-align: center;
 }
 
 th {
-    background-color: #333;
-    color: white;
+    background-color: #036100;
+    color: rgb(0, 0, 0);
 }
 
 .button-pitstop {
-    background-color: #FF6F61;
+    background-color: #008521;
     color: white;
     padding: 12px 30px;
     font-size: 18px;
@@ -521,7 +521,7 @@ th {
 }
 
 .button-pitstop:hover {
-    background-color: #e65a50;
+    background-color: #00682f;
 }
 
 #pitstop-timer {
