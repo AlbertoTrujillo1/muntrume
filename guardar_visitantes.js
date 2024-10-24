@@ -7,7 +7,7 @@
         const navegador = navigator.userAgent; // Obtener el navegador
 
         // Enviar los datos al Google Apps Script
-        fetch("TU_URL_DEL_SCRIPT", {
+        fetch("https://script.google.com/macros/s/AKfycbzp-jRoDUOnpWpDEQLkBfikxolKd_RhTySOPtQ9zMHqdSOyuaRtfMNQvkkQQRcqQNqXeQ/exec", {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
