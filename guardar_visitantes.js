@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    // Obtener IP del visitante
+    // Obtener la IP del visitante
     const ipResponse = await fetch('https://api.ipify.org?format=json');
     const ipData = await ipResponse.json();
     const ip = ipData.ip;
@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const navegador = navigator.userAgent;
     const idioma = navigator.language || "Idioma no disponible";
 
-    // Detectar sistema operativo y plataforma
+    // Extraer sistema operativo y plataforma
     const sistemaOperativo = obtenerSistemaOperativo(navegador);
     const plataforma = obtenerPlataforma(navegador);
 
-    // Enviar datos al Google Apps Script
+    // Enviar los datos al Google Apps Script
     const response = await fetch("https://script.google.com/macros/s/AKfycbwdIYLnfIpGqGrJtwWDHSEA584Y4KtxJHytgwBHVYtXKy3AKOS9i7Ax9EkZBeQH5qpTMQ/exec", {
       method: "POST",
       headers: {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// Función para detectar sistema operativo a partir del userAgent
+// Función para detectar el sistema operativo a partir del userAgent
 function obtenerSistemaOperativo(userAgent) {
   if (userAgent.includes("Windows")) return "Windows";
   if (userAgent.includes("Mac OS")) return "Mac OS";
@@ -45,4 +45,3 @@ function obtenerPlataforma(userAgent) {
   if (/Tablet|iPad/i.test(userAgent)) return "Tableta";
   return "Escritorio";
 }
-
