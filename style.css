@@ -27,6 +27,60 @@ body {
     font-size: 18px;
     color: #4CAF50;
 }
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh; /* Altura de la sección hero */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Texto blanco para mejor contraste */
+    text-align: center;
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Coloca el video detrás del contenido */
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Cubre el área sin distorsión */
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 1; /* Asegura que el contenido esté por encima del video */
+    padding: 20px; /* Espacio interno */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d7fadd;
+    color: #0e9702;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-button:hover {
+    background-color: #81c784;
+}
 /* Estilos para el botón de Discord */
 .discord-cta {
     margin-top: 20px;
@@ -50,42 +104,57 @@ body {
 }
 
 /* Header */
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.main-header {
+    background-color: #1f6e22; /* Color de fondo oscuro */
+    padding: 10px 20px; /* Padding para el encabezado */
+    display: flex; /* Flexbox para alinear los elementos */
+    justify-content: space-between; /* Espacio entre logo y navegación */
+    align-items: center; /* Centra verticalmente los elementos */
 }
 
-header .logo img {
-    width: 100px;
-    margin-left: 20px;
+.logo img {
+    height: 60px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción */
 }
 
-header nav ul {
+nav {
+    margin-left: auto; /* Empuja el menú hacia la derecha */
+}
+
+.nav-links {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    gap: 20px; /* Espaciado entre los enlaces */
 }
 
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
+.nav-links a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: bold;
+    position: relative; /* Para el efecto de subrayado */
+    white-space: nowrap; /* Evita que el texto se divida */
+    padding: 5px 10px; /* Espacio interno para los enlaces */
+    transition: color 0.3s ease; /* Suaviza la transición del color */
 }
 
-header nav ul li a:hover {
-    color: #4CAF50;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    background: #81c784; /* Color de subrayado */
+    transform: scaleX(0);
+    transition: transform 0.3s ease; /* Suaviza la transición */
+}
+
+.nav-links a:hover {
+    color: #a5d6a7; /* Color al pasar el ratón */
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1); /* Despliega la línea en hover */
 }
 .countdown-container {
     margin-top: 50px;
@@ -212,40 +281,82 @@ header nav ul li a:hover {
 
 /* Latest News Section */
 #latest-news {
-    padding: 50px 20px;
-    background: #fff;
+    padding: 40px 20px; /* Padding para la sección de noticias */
+    background-color: #f8f9fa; /* Fondo claro para la sección */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 #latest-news h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    text-align: center;
-    color: #333;
+    text-align: center; /* Centrar el título */
+    color: #228B22; /* Color de texto */
+    margin-bottom: 30px; /* Margen inferior */
 }
 
-#latest-news article {
-    margin-bottom: 30px;
+.news-articles {
+    display: flex; /* Usar flexbox para alineación */
+    flex-wrap: wrap; /* Permitir que los artículos se envuelvan */
+    gap: 20px; /* Espacio entre artículos */
+    justify-content: center; /* Centrar los artículos */
 }
 
-#latest-news h3 {
-    font-size: 1.5rem;
-    color: #228B22;
+.news-articles article {
+    background-color: #03ff1854; /* Fondo blanco para artículos */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: #228B22; /* Sombra sutil */
+    flex: 1 1 calc(30% - 20px); /* Artículos en 3 columnas */
+    transition: transform 0.3s; /* Transición suave para efecto hover */
 }
 
-#latest-news p {
-    font-size: 1rem;
-    color: #555;
+.news-articles article:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
 }
 
-#latest-news a {
-    color: #228B22;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+.article-image {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: auto; /* Mantener la proporción */
+    border-radius: 8px; /* Bordes redondeados para imágenes */
+    margin-bottom: 15px; /* Margen inferior para separación */
 }
 
-#latest-news a:hover {
-    color: #2E8B57;
+#race-schedule {
+    margin-top: 40px; /* Espacio superior */
+    text-align: center; /* Centrar el contenido */
+}
+
+#race-schedule h2 {
+    margin-bottom: 10px; /* Margen inferior para el título */
+    color: #228B22; /* Color del título */
+}
+
+#race-calendar {
+    margin-top: 20px; /* Espacio superior */
+}
+
+#calendar-list {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin relleno */
+}
+
+#calendar-list li {
+    background-color: #a7f1a7; /* Fondo suave para cada carrera */
+    padding: 10px; /* Espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 5px 0; /* Margen entre elementos */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+#calendar-list li:hover {
+    background-color: #005e17; /* Cambio de color al pasar el ratón */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-articles article {
+        flex: 1 1 100%; /* Hacer que los artículos ocupen 100% en pantallas pequeñas */
+    }
 }
 /* News Section */
 #news {

@@ -23,55 +23,36 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <picture>
-                <source srcset="logo.webp" type="image/webp">
-                <img src="logo.webp" alt="Muntrume Motorsport Logo - Leading Racing Team" width="150" height="150">
-            </picture>
+        <div class="main-header">
+            <div class="logo">
+                <picture>
+                    <source srcset="logo.webp" type="image/webp">
+                    <img src="logo.webp" alt="Muntrume Motorsport Logo - Simracing Team from Barcelona">
+                </picture>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sponsors.html">Sponsors</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="team.html" title="Meet the Muntrume Motorsport Team">Team</a></li>
-                <li><a href="sponsors.html" title="Our Motorsport Sponsors">Sponsors</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
-
-    <section id="welcome">
-        <div class="welcome-content">
-            <h1>Muntrume Motorsport - Passion for Speed & Precision</h1>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="Le Mans by night - 2024 Le Mans 24 Hours - Michelin Motorsport.mp4" type="video/mp4"> <!-- Asegúrate de tener el video en la ruta correcta -->
+            Tu navegador no soporta videos.
+        </video>
+        <div class="hero-content">
+            <h1>Welcome to Muntrume Motorsport</h1>
             <p>At Muntrume Motorsport, speed and precision are our passion. Join us to explore the world of racing and meet our talented team.</p>
-            <a href="team.html" class="button">Meet the Team</a>
-        </div>
-    </section>
-
-    <section id="carousel">
-        <link rel="stylesheet" href="carousel.css">
-        <div class="carousel">
-            <picture>
-                <source srcset="coche1.webp" type="image/webp">
-                <img src="coche1.webp" alt="Muntrume Motorsport Car - Racing Event 2024" class="active" width="auto" height="auto">
-            </picture>
-            <picture>
-                <source srcset="coche2.webp" type="image/webp">
-                <img src="coche2.webp" alt="Muntrume Motorsport Racing Car 2" loading="lazy" width="auto" height="auto">
-            </picture>
-            <picture>
-                <source srcset="coche3.webp" type="image/webp">
-                <img src="coche3.webp" alt="Muntrume Motorsport Racing Car 3" loading="lazy" width="auto" height="auto">
-            </picture>
-            </picture>
-                <source srcset="coche4.webp" type="image/webp">
-                <img src="coche4.webp" alt="Muntrume Motorsport Racing Car 4" loading="lazy" width="auto" height="auto">
-            </picture>
-        </div>
-        <div class="carousel-buttons">
-            <button class="carousel-button" onclick="prevSlide()">&#10094;</button>
-            <button class="carousel-button" onclick="nextSlide()">&#10095;</button>
+            <a href="team.html" class="hero-button">Meet the Team</a>
         </div>
     </section>
 
