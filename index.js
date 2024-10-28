@@ -1,26 +1,34 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    // Obtener la IP del visitante
-    const ipResponse = await fetch('https://api.ipify.org?format=json');
-    const ipData = await ipResponse.json();
-    const ip = ipData.ip;
+let currentSlide = 0;
+let autoSlideInterval;
 
-    // Obtener el userAgent del navegador
-    const navegador = navigator.userAgent;
+const slides = document.querySelectorAll('.carousel img');
 
-    // Enviar los datos al Google Apps Script
-    const response = await fetch("https://script.google.com/macros/s/AKfycbwdIYLnfIpGqGrJtwWDHSEA584Y4KtxJHytgwBHVYtXKy3AKOS9i7Ax9EkZBeQH5qpTMQ/exec", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: `ip=${encodeURIComponent(ip)}&navegador=${encodeURIComponent(navegador)}`
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
     });
+}
 
-    // Obtener la respuesta del servidor
-    const result = await response.text();
-    console.log('Resultado del envío:', result);
-  } catch (error) {
-    console.error('Error al enviar datos:', error);
-  }
-});
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 5000);
+}
+
+function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+}
+
+document.querySelector('.carousel').addEventListener('mouseover', stopAutoSlide);
+document.querySelector('.carousel').addEventListener('mouseout', startAutoSlide);
+
+showSlide(currentSlide);
+startAutoSlide();
