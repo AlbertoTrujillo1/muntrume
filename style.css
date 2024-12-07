@@ -719,10 +719,12 @@ th {
 
 /* Footer */
 footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
+    background-color: #333;
+    color: white;
     padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: relative; /* Cambié esto para evitar que se fije */
 }
 
 footer p {
